@@ -1,0 +1,47 @@
+/* theme.css */
+@import "tailwindcss";
+ 
+@theme {
+  /* Colors: semantic names, not palette names */
+  --color-primary: oklch(0.55 0.22 260);
+  --color-primary-hover: oklch(0.48 0.22 260);
+  --color-secondary: oklch(0.70 0.05 260);
+  --color-secondary-hover: oklch(0.63 0.05 260);
+  --color-destructive: oklch(0.55 0.22 25);
+  --color-destructive-hover: oklch(0.48 0.22 25);
+ 
+  --color-background: oklch(0.99 0 0);
+  --color-foreground: oklch(0.15 0 0);
+  --color-muted: oklch(0.95 0.01 260);
+  --color-muted-foreground: oklch(0.45 0.02 260);
+  --color-border: oklch(0.90 0.01 260);
+ 
+  --color-input-border: oklch(0.82 0.02 260);
+  --color-ring: oklch(0.55 0.22 260);
+ 
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+ 
+  /* Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* theme.css (continued) */
+@layer theme {
+    .dark {
+      --color-primary: oklch(0.72 0.18 260);
+      --color-primary-hover: oklch(0.78 0.18 260);
+   
+      --color-background: oklch(0.15 0.02 260);
+      --color-foreground: oklch(0.95 0 0);
+      --color-muted: oklch(0.22 0.02 260);
+      --color-muted-foreground: oklch(0.65 0.02 260);
+      --color-border: oklch(0.28 0.02 260);
+   
+      --color-input-border: oklch(0.35 0.02 260);
+    }
+  }
