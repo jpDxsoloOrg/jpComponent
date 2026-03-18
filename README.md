@@ -39,7 +39,7 @@ function App() {
 
 ## Storybook
 
-Browse all components and their variants: [Storybook (coming soon)](#)
+Browse all components and their variants: [Storybook Demo](https://jpdxsoloorg.github.io/jpComponent/)
 
 ## License
 
