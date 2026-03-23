@@ -8,4 +8,6 @@ export { Badge } from './components/Badge';
 export { Checkbox } from './components/Checkbox';
 export { Select } from './components/Select';
 export { Textarea } from './components/Textarea';
+export { AlertDialog } from './components/AlertDialog';
+export { ColorPicker } from './components/ColorPicker';
 export { cn } from './utils/cn';
