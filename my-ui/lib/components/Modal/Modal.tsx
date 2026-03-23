@@ -49,26 +49,33 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
       [onClose]
     );
  
+    // Focus the first focusable element only when the modal opens
     useEffect(() => {
       if (!open) return;
- 
-      // Save the currently focused element and lock scroll
+
       previousActiveElement.current = document.activeElement as HTMLElement;
       document.body.style.overflow = 'hidden';
-      document.addEventListener('keydown', handleKeyDown);
- 
-      // Focus the first focusable element inside the modal
+
       requestAnimationFrame(() => {
         const focusable = contentRef.current?.querySelectorAll<HTMLElement>(
           'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
         );
         focusable?.[0]?.focus();
       });
- 
+
       return () => {
         document.body.style.overflow = '';
-        document.removeEventListener('keydown', handleKeyDown);
         previousActiveElement.current?.focus();
+      };
+    }, [open]);
+
+    // Keydown listener in a separate effect so it doesn't re-trigger focus
+    useEffect(() => {
+      if (!open) return;
+
+      document.addEventListener('keydown', handleKeyDown);
+      return () => {
+        document.removeEventListener('keydown', handleKeyDown);
       };
     }, [open, handleKeyDown]);
  
