@@ -10,4 +10,7 @@ export { Select } from './components/Select';
 export { Textarea } from './components/Textarea';
 export { AlertDialog } from './components/AlertDialog';
 export { ColorPicker } from './components/ColorPicker';
+export { Tooltip } from './components/Tooltip';
+export { Kbd } from './components/Kbd';
+export { Toggle } from './components/Toggle';
 export { cn } from './utils/cn';
